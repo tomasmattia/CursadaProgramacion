@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int main()
+
 {
     char letra;
     int acumuladorA=0;
@@ -12,7 +13,7 @@ int main()
     int contador;
     for(contador=0;contador<20;contador++){
         printf("Ingrese una letra: ");
-        scanf("%c",&letra);
+        scanf(" %c",&letra);
         switch(letra){
         case 'a':
             acumuladorA+=1;
@@ -31,5 +32,5 @@ int main()
         }
         system("cls");
     }
-    printf("La cantidad de letras A fue de %d , de letras E %d , de letras I %d, de letras O %d, y de letras U %d y el contador %d",acumuladorA,acumuladorE,acumuladorI,acumuladorO,acumuladorU,contador);
+    printf("La cantidad de letras A fue de %d , de letras E %d , de letras I %d, de letras O %d, y de letras U %d",acumuladorA,acumuladorE,acumuladorI,acumuladorO,acumuladorU);
 }
