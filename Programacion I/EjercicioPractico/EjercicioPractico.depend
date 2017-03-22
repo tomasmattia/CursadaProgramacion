@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1490190351 source:c:\users\alumno\desktop\ejerciciopractico\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+	<conio.h>
+	<ctype.h>
+
