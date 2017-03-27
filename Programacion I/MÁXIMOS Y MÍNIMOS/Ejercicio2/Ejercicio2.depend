@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1490572033 source:c:\users\tomas\documents\utn programacion\programacion i\m¡ximos y mÕnimos\ejercicio2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
