@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1492442525 source:d:\lunes 15.4\ejercicio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
