@@ -1,0 +1,17 @@
+char* = char []
+sprintf
+atoi
+atof
+
+char dato[]="123";
+int datoInt;
+datoInt=atoi(dato);
+//datoInt 123
+
+datoFloat=atof(dato);
+//datoFloat 123.52
+
+isdigit 0 no numero | 1 un numero 
+
+sprintf(cad,"%f",datoFloat);
+sprintf(cad,"%d",datoInt);
