@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1493043601 source:d:\lunes 24-4\ejercicio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1493043393 d:\lunes 24-4\ejercicio1\funciones.h
+
+1493043761 source:d:\lunes 24-4\ejercicio1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"funciones.h"
+
