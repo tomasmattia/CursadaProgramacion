@@ -45,3 +45,4 @@ void mostrarSeriesUnCliente(eCliente clientes[],eSerie series[],eClientes_Series
 
 void serieMenosPopular(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int,int,int);
 
+void seriesJuan(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int,int,int);

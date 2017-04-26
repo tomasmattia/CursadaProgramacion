@@ -167,8 +167,9 @@ void mostrarClientesUnaSerie(eCliente clientes[],eSerie series[],eClientes_Serie
 
 void serieMenosPopular(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int tamCli,int tamClienSer,int tamSer)
 {
+    int i,j;
     eLoser popularidadSerie[5]={};
-    eLoser aux[1]={};
+    eLoser aux={};
     for(i=0;i<tamSer;i++)
     {
         popularidadSerie[i].idSerie=series[i].idSerie;
@@ -176,9 +177,29 @@ void serieMenosPopular(eCliente clientes[],eSerie series[],eClientes_Series clie
         {
             if(series[i].idSerie==clientesSeries[j].idSerie)
             {
-                popularidadSerie[i].idSerie+=1;
+                popularidadSerie[i].cont+=1;
             }
+        }
+        if(i==0 || popularidadSerie[i].cont<aux.cont)
+        {
+            aux.cont=popularidadSerie[i].cont;
+            aux.idSerie=popularidadSerie[i].idSerie;
+        }
+    }
+    for(i=0;i<tamSer;i++)
+    {
+        if(aux.idSerie==series[i].idSerie)
+        {
+            printf("La serie menos popular es %s\n",series[i].titulo);
         }
     }
 }
 
+void seriesJuan(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int tamCli,int tamClienSer,int tamSer)
+{
+    int i;
+    for(i=0;i<tamCli;i++)
+    {
+
+    }
+}
