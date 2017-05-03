@@ -68,7 +68,7 @@ int main()
         }
         system("pause");
         system("cls");
-
     }while(respuesta=='s');
+
     return 0;
 }
