@@ -79,8 +79,10 @@ void mostrarSeries(eSerie series[])
 void mostrarClientesConSeries(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int tamCli,int tamClienSer,int tamSer)
 {
     int i,j,k;
+    int flag=0;
     for(i=0; i<tamCli; i++)
     {
+        flag=0;
         if(clientes[i].estado==1)
         {
             printf("%s mira: \t",clientes[i].nombre);
@@ -93,9 +95,15 @@ void mostrarClientesConSeries(eCliente clientes[],eSerie series[],eClientes_Seri
                         if(clientesSeries[j].idSerie==series[k].idSerie)
                         {
                             printf("%s\t",series[k].titulo);
+
                         }
                     }
+                   flag=1;
                 }
+            }
+            if(flag==0)
+            {
+                printf("No mira ninguna serie");
             }
             printf("\n");
         }
@@ -105,8 +113,10 @@ void mostrarClientesConSeries(eCliente clientes[],eSerie series[],eClientes_Seri
 void mostrarSeriesConClientes(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int tamCli,int tamClienSer,int tamSer)
 {
     int i,j,k;
+    int flag=0;
     for(i=0;i<tamSer;i++)
     {
+        flag=0;
         printf("%s: ",series[i].titulo);
         for(j=0;j<tamClienSer;j++)
         {
@@ -119,7 +129,12 @@ void mostrarSeriesConClientes(eCliente clientes[],eSerie series[],eClientes_Seri
                         printf("%s ",clientes[k].nombre);
                     }
                 }
+                flag=1;
             }
+        }
+        if(flag==0)
+        {
+            printf("Nadie mira esta serie");
         }
         printf("\n");
     }
@@ -131,6 +146,7 @@ void mostrarClientesUnaSerie(eCliente clientes[],eSerie series[],eClientes_Serie
     mostrarSeries(series);
     int serieMostrar;
     int flag=0;
+    int flagCantidad=0;
     printf("Ingrese el ID de serie a mostrar: ");
     scanf("%d",&serieMostrar);
     for(i=0;i<serieMostrar;i++)
@@ -147,6 +163,7 @@ void mostrarClientesUnaSerie(eCliente clientes[],eSerie series[],eClientes_Serie
     }
     else
     {
+        flagCantidad=0;
         printf("A la serie %s la ven: ",series[i].titulo);
         for(j=0;j<tamClienSer;j++)
         {
@@ -159,7 +176,12 @@ void mostrarClientesUnaSerie(eCliente clientes[],eSerie series[],eClientes_Serie
                         printf("%s ",clientes[k].nombre);
                     }
                 }
+                flagCantidad=1;
             }
+        }
+        if(flagCantidad==0)
+        {
+            printf("Nadie mira esta serie");
         }
         printf("\n");
     }
@@ -183,23 +205,44 @@ void serieMenosPopular(eCliente clientes[],eSerie series[],eClientes_Series clie
         if(i==0 || popularidadSerie[i].cont<aux.cont)
         {
             aux.cont=popularidadSerie[i].cont;
-            aux.idSerie=popularidadSerie[i].idSerie;
         }
     }
     for(i=0;i<tamSer;i++)
     {
-        if(aux.idSerie==series[i].idSerie)
+        if(aux.cont==popularidadSerie[i].cont)
         {
-            printf("La serie menos popular es %s\n",series[i].titulo);
+            for(j=0;j<tamSer;j++)
+            {
+                if(popularidadSerie[i].idSerie==series[j].idSerie)
+                {
+                    printf("La serie menos popular es %s\n",series[i].titulo);
+                }
+            }
         }
     }
 }
 
 void seriesJuan(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int tamCli,int tamClienSer,int tamSer)
 {
-    int i;
+    int i,j,k;
     for(i=0;i<tamCli;i++)
     {
-
+        if(strcmp(clientes[i].nombre,"juan")==0)
+        {
+            for(j=0;j<tamClienSer;j++)
+            {
+                if(clientes[i].idCliente==clientesSeries[j].idCliente)
+                {
+                    for(k=0;k<tamSer;k++)
+                    {
+                        if(clientesSeries[j].idSerie==series[k].idSerie)
+                        {
+                            printf("%s ",series[k].titulo);
+                        }
+                    }
+                }
+            }
+        }
     }
+    printf("\n");
 }

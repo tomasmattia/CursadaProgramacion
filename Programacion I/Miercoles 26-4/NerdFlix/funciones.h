@@ -41,7 +41,7 @@ void mostrarClientesConSeries(eCliente clientes[],eSerie series[],eClientes_Seri
 
 void mostrarSeriesConClientes(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int,int,int);
 
-void mostrarSeriesUnCliente(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int,int,int);
+void mostrarClientesUnaSerie(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int,int,int);
 
 void serieMenosPopular(eCliente clientes[],eSerie series[],eClientes_Series clientesSeries[],int,int,int);
 

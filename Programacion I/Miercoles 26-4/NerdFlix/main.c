@@ -28,6 +28,7 @@ int main()
     int opcion=0;
     do
     {
+        opcion=0;
         printf("1 - Mostrar cada lista\n");
         printf("2 - Mostrar clientes con sus series\n");
         printf("3 - Por cada serie los clientes que la estan viendo\n");
@@ -35,6 +36,7 @@ int main()
         printf("5 - La serie menos popular\n");
         printf("6 - Todas las series que ven los clientes de nombre \"Juan\"\n");
         printf("7 - Salir\n");
+        fflush(stdin);
         scanf("%d",&opcion);
         switch(opcion)
         {
@@ -55,13 +57,17 @@ int main()
                 serieMenosPopular(clientes,series,clientesSeries,tamCli,tamClienSer,tamSer);
                 break;
             case 6:
+                seriesJuan(clientes,series,clientesSeries,tamCli,tamClienSer,tamSer);
                 break;
             case 7:
                 respuesta='n';
                 break;
             default:
-                printf("No es una opcion valida");
+                printf("No es una opcion valida\n");
+                break;
         }
+        system("pause");
+        system("cls");
 
     }while(respuesta=='s');
     return 0;
