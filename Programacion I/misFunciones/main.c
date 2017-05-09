@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include <conio.h>
 #include <limits.h>
 #include "misFunciones.h"
@@ -16,7 +17,7 @@ int main()
         strcpy(lista[i].apellido," ");
         strcpy(lista[i].nombre," ");
         lista[i].edad=0;
-        lista[i].estado=0;
+        lista[i].idCliente=0;
         lista[i].dni=0;
     }
 
@@ -50,7 +51,7 @@ int main()
                 respuesta='n';
                 break;
             default:
-                printf("No es una opcion valida del menu");
+                printf("No es una opcion valida del menu\n");
                 break;
         }
         system("pause");

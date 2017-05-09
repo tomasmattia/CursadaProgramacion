@@ -2,10 +2,10 @@
 #define MISFUNCIONES_H_INCLUDED
 
 typedef struct {
+    int idCliente;
     char apellido[50];
     char nombre[50];
     int edad;
-    int estado;
     int dni;
 
 }ECliente;
@@ -62,5 +62,7 @@ void eliminarCliente(ECliente lista[]);
  *
  */
 void mostrarOrdenado(ECliente lista[]);
+
+void validarId(ECliente lista[],int,int);
 
 #endif // FUNCIONES_H_INCLUDED
