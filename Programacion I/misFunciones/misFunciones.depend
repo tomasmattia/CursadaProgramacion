@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1494287044 source:c:\users\tomas mattia\documents\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\misfunciones\misfunciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<limits.h>
+	"misFunciones.h"
+
+1494286960 c:\users\tomas mattia\documents\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\misfunciones\misfunciones.h
+
+1494287004 source:c:\users\tomas mattia\documents\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\misfunciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<limits.h>
+	"misFunciones.h"
+
