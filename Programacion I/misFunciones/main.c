@@ -13,6 +13,7 @@ int main()
     char respuesta='s';
     for(i=0;i<20;i++)
     {
+        strcpy(lista[i].apellido," ");
         strcpy(lista[i].nombre," ");
         lista[i].edad=0;
         lista[i].estado=0;

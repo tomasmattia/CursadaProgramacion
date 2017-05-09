@@ -2,13 +2,28 @@
 #define MISFUNCIONES_H_INCLUDED
 
 typedef struct {
-
+    char apellido[50];
     char nombre[50];
     int edad;
     int estado;
     int dni;
 
 }ECliente;
+
+typedef struct
+{
+    int idSerie;
+    char titulo[20];
+    int temporadas;
+    char genero[20];
+    int estado;
+}eSerie;
+
+typedef struct
+{
+    int idCliente;
+    int idSerie;
+}eClientes_Series;
 
 /**
  * Obtiene el primer indice libre del array.

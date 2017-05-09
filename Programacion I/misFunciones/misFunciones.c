@@ -30,12 +30,31 @@ void agregarCliente(ECliente lista[])
 {
     int x=obtenerEspacioLibre(lista);
     char auxNombre[100]= {};
+    char auxApellido[100]= {};
+    int largo;
+    int i;
     if(x==-1) // SI NO HAY ESPACIO
     {
         printf("Se completo el espacio, necesita borrar una persona\n");
     }
     else // SI HAY ESPACIO
     {
+        printf("Ingrese el apellido: ");
+        fflush(stdin);
+        gets(auxApellido);
+        while(strlen(auxApellido)>49)
+        {
+            printf("Demasiado extenso, reingrese el apellido: ");
+            fflush(stdin);
+            gets(auxApellido);
+        }
+        largo=strlen(auxApellido);
+        for(i=0; i<largo; i++)
+        {
+            auxApellido[i]=tolower(auxApellido[i]);
+        }
+        auxApellido[0]=toupper(auxApellido[0]);
+        strcpy(lista[x].apellido,auxApellido);
         printf("Ingrese el nombre: ");
         fflush(stdin);
         gets(auxNombre);
@@ -45,6 +64,12 @@ void agregarCliente(ECliente lista[])
             fflush(stdin);
             gets(auxNombre);
         }
+        largo=strlen(auxNombre);
+        for(i=0; i<largo; i++)
+        {
+            auxNombre[i]=tolower(auxNombre[i]);
+        }
+        auxNombre[0]=toupper(auxNombre[0]);
         strcpy(lista[x].nombre,auxNombre);
         printf("Ingresar edad: ");
         scanf("%d",&lista[x].edad);
@@ -82,7 +107,7 @@ void eliminarCliente(ECliente lista[])
 {
     int x=buscarPorDni(lista);
     char respuesta='n';
-    if(x==-1 && lista[x].estado==0) // SI EL DNI NO EXISTE
+    if(x==-1 || lista[x].estado==0) // SI EL DNI NO EXISTE
     {
         printf("El dni ingresado es erroneo\n");
     }
@@ -124,9 +149,8 @@ void mostrarOrdenado(ECliente lista[])
     {
         if(lista[i].estado==1)
         {
-            printf("\nDNI: %d\tNOMBRE: %s\t EDAD: %d",lista[i].dni,lista[i].nombre,lista[i].edad);
+            printf("\nDNI: %d\tNOMBRE: %s\tAPELLIDO: %s\tEDAD: %d",lista[i].dni,lista[i].nombre,lista[i].apellido,lista[i].edad);
         }
     }
     printf("\n");
 }
-
