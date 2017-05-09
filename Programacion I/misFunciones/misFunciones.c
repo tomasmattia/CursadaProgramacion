@@ -51,9 +51,8 @@ void agregarCliente(ECliente lista[])
         largo=strlen(auxApellido);
         for(i=0; i<largo; i++)
         {
-            auxApellido[i]=tolower(auxApellido[i]);
+            auxApellido[i]=toupper(auxApellido[i]);
         }
-        auxApellido[0]=toupper(auxApellido[0]);
         strcpy(lista[x].apellido,auxApellido);
         printf("Ingrese el nombre: ");
         fflush(stdin);
@@ -67,9 +66,8 @@ void agregarCliente(ECliente lista[])
         largo=strlen(auxNombre);
         for(i=0; i<largo; i++)
         {
-            auxNombre[i]=tolower(auxNombre[i]);
+            auxNombre[i]=toupper(auxNombre[i]);
         }
-        auxNombre[0]=toupper(auxNombre[0]);
         strcpy(lista[x].nombre,auxNombre);
         printf("Ingresar edad: ");
         scanf("%d",&lista[x].edad);
