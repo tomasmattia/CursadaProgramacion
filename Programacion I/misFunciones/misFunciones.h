@@ -45,9 +45,9 @@ void agregarCliente(ECliente lista[]);
  * @param lista el array se pasa como parametro.
  * @return el indice en donde se encuentra el elemento que coincide con el parametro dni
  */
-int buscarPorDni(ECliente lista[]);
+int buscarPorId(ECliente lista[]);
 
-/** \brief Recibe la estructura, ejecuta buscarPorDni, si el dni existe se muestra y pregunta si se quiere eliminar o no, caso afirmativo el estado pasa a 0, si no existe dni sale una advertencia,
+/** \brief Recibe la estructura, ejecuta buscarPorId, si el dni existe se muestra y pregunta si se quiere eliminar o no, caso afirmativo el estado pasa a 0, si no existe dni sale una advertencia,
  *
  * \param recibe la estructura "lista"
  * \return void uestra el dni buscado para eliminar y lo elimina si el usuario asi lo decide
@@ -63,6 +63,14 @@ void eliminarCliente(ECliente lista[]);
  */
 void mostrarOrdenado(ECliente lista[]);
 
+/** \brief Recibe la estructura, el id y el indice, para validar que no se repita el ID y modificar el indice.
+ *
+ * \param lista[] ECliente
+ * \param int id
+ * \param int indice
+ * \return void
+ *
+ */
 void validarId(ECliente lista[],int,int);
 
 #endif // FUNCIONES_H_INCLUDED

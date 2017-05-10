@@ -99,24 +99,24 @@ void agregarCliente(ECliente lista[])
     }
 }
 
-int buscarPorDni(ECliente lista[])
+int buscarPorId(ECliente lista[])
 {
     int i;
     int resultado;
-    int flagDni=0;
-    int dni;
-    printf("Ingrese el dni a buscar: ");
-    scanf("%d",&dni);
+    int flagId=0;
+    int idCliente;
+    printf("Ingrese el ID del Cliente a buscar: ");
+    scanf("%d",&idCliente);
     for(i=0; i<20; i++)
     {
-        if(dni==lista[i].dni)
+        if(idCliente==lista[i].idCliente)
         {
             resultado=i;
-            flagDni=1;
+            flagId=1;
             break;
         }
     }
-    if(flagDni==0)
+    if(flagId==0)
     {
         resultado=-1;
     }
@@ -125,15 +125,15 @@ int buscarPorDni(ECliente lista[])
 
 void eliminarCliente(ECliente lista[])
 {
-    int ubicacionLista=buscarPorDni(lista);
+    int ubicacionLista=buscarPorId(lista);
     char respuesta='n';
     if(ubicacionLista==-1 || lista[ubicacionLista].idCliente==0) // SI EL DNI NO EXISTE
     {
-        printf("El dni ingresado es erroneo\n");
+        printf("El ID ingresado es erroneo\n");
     }
     else // SI EL DNI EXISTE
     {
-        printf("\nDNI: %d\tNOMBRE: %s\t EDAD: %d",lista[ubicacionLista].dni,lista[ubicacionLista].nombre,lista[ubicacionLista].edad);
+        printf("\nDNI: %d\tNOMBRE: %s\tAPELLIDO: %s\tEDAD: %d",lista[ubicacionLista].dni,lista[ubicacionLista].nombre,lista[ubicacionLista].apellido,lista[ubicacionLista].edad);
         printf("\nDesea eliminarlo? s/n: ");
         fflush(stdin);
         scanf("%c",&respuesta);
