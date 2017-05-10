@@ -12,18 +12,19 @@ typedef struct {
 
 typedef struct
 {
-    int idSerie;
-    char titulo[20];
-    int temporadas;
-    char genero[20];
+    char patente[7];
     int estado;
-}eSerie;
+    int marca;
+    int idDueno;
+    int entrada;
+
+}eEstacionamiento;
 
 typedef struct
 {
-    int idCliente;
-    int idSerie;
-}eClientes_Series;
+    int idMarca;
+    char nombreMarca[20];
+}eMarcas;
 
 /**
  * Obtiene el primer indice libre del array.
@@ -72,5 +73,9 @@ void mostrarOrdenado(ECliente lista[]);
  *
  */
 void validarId(ECliente lista[],int,int);
+
+int lugarEstacionamiento(eEstacionamiento estacionamiento[]);
+
+void entradaEstacionamiento(ECliente lista[],eEstacionamiento estacionamiento[]);
 
 #endif // FUNCIONES_H_INCLUDED

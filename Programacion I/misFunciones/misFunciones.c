@@ -37,6 +37,7 @@ void validarId(ECliente lista[],int idABuscar, int ubicacionLista)
             while(lista[i].idCliente==idABuscar || idABuscar==0)
             {
                 printf("El ID esta ocupado, ingrese uno nuevo: ");
+                fflush(stdin);
                 scanf("%d",&idABuscar);
             }
             break;
@@ -173,4 +174,89 @@ void mostrarOrdenado(ECliente lista[])
         }
     }
     printf("\n");
+}
+
+int lugarEstacionamiento(eEstacionamiento estacionamiento[])
+{
+    int i;
+    int flagLugar=0;
+    for(i=0;i<20;i++)
+    {
+        if(estacionamiento[i].estado==1)
+        {
+            flagLugar=1;
+            break;
+        }
+    }
+    if(flagLugar==1)
+    {
+        return i;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+void entradaEstacionamiento(ECliente lista[],eEstacionamiento estacionamiento[])
+{
+    int hayLugar=lugarEstacionamiento(estacionamiento);
+    char auxPatente[20]={};
+    int auxMarca=0;
+    int auxDueno=0;
+    int flagDueno=0;
+    int horario;
+    int i=0;
+    if(hayLugar==-1)
+    {
+        printf("No hay lugar, regrese mas tarde");
+    }
+    else
+    {
+        printf("Ingrese la patente: ");
+        fflush(stdin);
+        scanf("%s",auxPatente);
+        while(strlen(auxPatente)>7)
+        {
+            printf("La patente no es valida, reingrese: ");
+            fflush(stdin);
+            scanf("%s",auxPatente);
+        }
+        strcpy(estacionamiento[hayLugar].patente,auxPatente);
+        do
+        {
+            printf("Ingrese la marca del vehiculo (1-2-3-4): ");
+            scanf("%d",&auxMarca);
+        }while(auxMarca<1 || auxMarca>4);
+        estacionamiento[hayLugar].marca=auxMarca;
+        printf("Ingrese su ID de Cliente: ");
+        scanf("%d",&auxDueno);
+        for(i=0;i<20;i++)
+        {
+            if(lista[i].idCliente==auxDueno && auxDueno!=0)
+            {
+                flagDueno=1;
+            }
+        }
+        while(flagDueno!=1)
+        {
+            printf("ID incorrecto, reingrese: ");
+            fflush(stdin);
+            scanf("%d",&auxDueno);
+            for(i=0;i<20;i++)
+            {
+                if(lista[i].idCliente==auxDueno && auxDueno!=0)
+                {
+                    flagDueno=1;
+                }
+            }
+        }
+        printf("Ingrese la hora de entrada: ");
+        scanf("%d",&horario);
+        while(horario<0 || horario>24)
+        {
+            printf("Error, reingrese la hora de entrada: ");
+            scanf("%d",&horario);
+        }
+    }
 }
