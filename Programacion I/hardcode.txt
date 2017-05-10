@@ -1,0 +1,17 @@
+void cargarClientes(eCliente clientes[])
+{
+    int id[20] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+    char nombres[20][30]= {"juan","maria","pedro","luis","romina","jose","andrea","patricia","luciano","camila","raul","ruben","jorge","laura","lionel","pepe","octavio","teofilo","lucas","sebastian"};
+    int estado[20]= {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+
+    int i;
+
+    for(i=0; i<20; i++)
+    {
+        clientes[i].idCliente = id[i];
+        strcpy(clientes[i].nombre, nombres[i]);
+        clientes[i].estado = estado[i];
+
+    }
+
+}
