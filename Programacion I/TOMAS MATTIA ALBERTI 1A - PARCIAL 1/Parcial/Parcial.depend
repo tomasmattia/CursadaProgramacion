@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1494428985 source:d:\tomas mattia alberti 1a - parcial 1\parcial\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<limits.h>
+	"lib.h"
+
+1494428673 d:\tomas mattia alberti 1a - parcial 1\parcial\lib.h
+
+1494428650 source:d:\tomas mattia alberti 1a - parcial 1\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<limits.h>
+	"lib.h"
+
