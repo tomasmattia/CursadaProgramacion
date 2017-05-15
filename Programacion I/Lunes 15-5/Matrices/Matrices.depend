@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1494852231 source:d:\lunes 15-5\matrices\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
