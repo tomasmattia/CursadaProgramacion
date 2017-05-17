@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1494984716 source:c:\users\tomas mattia\documents\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\resolucionparcial\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"lib.h"
+
+1494984406 c:\users\tomas mattia\documents\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\resolucionparcial\lib.h
+
+1494984901 source:c:\users\tomas mattia\documents\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\resolucionparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"lib.h"
+
