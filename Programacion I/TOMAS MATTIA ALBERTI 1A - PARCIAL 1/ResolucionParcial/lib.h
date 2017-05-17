@@ -1,5 +1,9 @@
 #ifndef LIB_H_INCLUDED
 #define LIB_H_INCLUDED
+#define TAMPRO 50
+#define TAMPROY 1000
+#define TAMPROXPRO 5
+
 
 typedef struct
 {
@@ -13,7 +17,7 @@ typedef struct
 typedef struct
 {
     int idCategoria;
-    char descCategoria[20];
+    char descCategoria[30];
     int pagoXHora;
 
 }eCategoria;
@@ -21,7 +25,7 @@ typedef struct
 typedef struct
 {
     int idProyecto;
-    char nombreProyecto[50];
+    char nombreProyecto[30];
 
 }eProyecto;
 

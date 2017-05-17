@@ -3,8 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 #include "lib.h"
-#define TAMPRO 5
-#define TAMPROY 5
+#define TAMPRO 50
+#define TAMPROY 1000
 #define TAMPROXPRO 5
 
 int main()
