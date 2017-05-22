@@ -31,7 +31,7 @@ int main()
     }
     fclose(f);
     */
-    fprintf(f,"Pancho salame");
+    fprintf(f,"PanchoBDM= Boludo de Mierda");
     fclose(f);
     f=fopen("pruebaEscritura.txt","r");
     while(!feof(f))
