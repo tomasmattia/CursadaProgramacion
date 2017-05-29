@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1496068494 source:d:\lunes 29-5\constructores\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
