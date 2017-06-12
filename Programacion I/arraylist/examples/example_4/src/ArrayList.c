@@ -217,7 +217,7 @@ int al_remove(ArrayList* pList,int index)
     {
         if(index<pList->size && index>=0)
         {
-            if(!contract(pList,index))
+            if(contract(pList,index)==0)
             {
                 returnAux = 0;
             }
@@ -281,8 +281,10 @@ int al_push(ArrayList* pList, int index, void* pElement)
     {
         if(index==pList->size)
         {
-            pList->add(pList,pElement);
-            returnAux=0;
+            if(pList->add(pList,pElement)==0)
+            {
+                returnAux=0;
+            }
         }
         else
         {
@@ -290,8 +292,10 @@ int al_push(ArrayList* pList, int index, void* pElement)
             {
                 if(expand(pList,index)==0)
                 {
-                    pList->set(pList,index,pElement);
-                    returnAux=0;
+                    if(pList->set(pList,index,pElement)==0)
+                    {
+                        returnAux=0;
+                    }
                 }
             }
         }
@@ -334,7 +338,7 @@ int al_isEmpty(ArrayList* pList)
     int returnAux = -1;
     if(pList!=NULL)
     {
-        if(pList->size==0)
+        if(pList->len(pList)==0)
         {
             returnAux = 1;
         }
