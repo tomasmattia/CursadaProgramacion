@@ -193,7 +193,7 @@ int al_set(ArrayList* pList, int index,void* pElement)
         }
         else
         {
-            if(index<(pList->size))
+            if(index<pList->size)
             {
                 pList->pElements[index]=pElement;
                 returnAux=0;
@@ -257,21 +257,9 @@ int al_clear(ArrayList* pList)
 ArrayList* al_clone(ArrayList* pList)
 {
     ArrayList* returnAux = NULL;
-    int i;
     if(pList!=NULL)
     {
-        returnAux = al_newArrayList();
-        if(returnAux!=NULL)
-        {
-            for(i=0;i<pList->size;i++)
-            {
-                if(resizeUp(returnAux)==0)
-                {
-                    returnAux->add(pList->pElements[i]);
-                    returnAux->size+=1;
-                }
-            }
-        }
+        returnAux=(ArrayList*)realloc(pList,sizeof(pList));
     }
     return returnAux;
 }
@@ -289,21 +277,22 @@ ArrayList* al_clone(ArrayList* pList)
 int al_push(ArrayList* pList, int index, void* pElement)
 {
     int returnAux=-1;
-    if(pList!=NULL && pList->pElements!=NULL)
+    if(pList!=NULL && pElement!=NULL && index>=0)
     {
         if(index==pList->size)
         {
-            pList->add(pElement);
+            pList->add(pList,pElement);
             returnAux=0;
         }
         else
         {
-            if(index<pList->size && index>=0)
+            if(index<pList->size)
             {
-                pList->size+=1;
-                expand(pList,index);
-                pList->set(pList,index,pElement);
-                returnAux=0;
+                if(expand(pList,index)==0)
+                {
+                    pList->set(pList,index,pElement);
+                    returnAux=0;
+                }
             }
         }
     }
@@ -490,14 +479,17 @@ int expand(ArrayList* pList,int index)
 {
     int returnAux = -1;
     int i;
-    if(pList!=NULL && pList->pElements!=NULL)
+    if(pList!=NULL)
     {
+        pList->size+=1;
         resizeUp(pList);
-        for(i=index;i<(pList->size+1);i++)
-        {
-            pList->pElements[i+1]=pList->pElements[i];
-        }
+
+        for(i=pList->size;i>index;i--)
+            {
+                pList->pElements[i]=pList->pElements[i-1];
+            }
         returnAux = 0;
+
     }
     return returnAux;
 }
