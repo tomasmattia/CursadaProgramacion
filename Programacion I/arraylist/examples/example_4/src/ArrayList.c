@@ -193,7 +193,7 @@ int al_set(ArrayList* pList, int index,void* pElement)
         }
         else
         {
-            if(index<pList->size)
+            if(index<(pList->size))
             {
                 pList->pElements[index]=pElement;
                 returnAux=0;
@@ -217,7 +217,7 @@ int al_remove(ArrayList* pList,int index)
     {
         if(index<pList->size && index>=0)
         {
-            if(contract(pList,index)==0)
+            if(!contract(pList,index))
             {
                 returnAux = 0;
             }
@@ -257,9 +257,21 @@ int al_clear(ArrayList* pList)
 ArrayList* al_clone(ArrayList* pList)
 {
     ArrayList* returnAux = NULL;
+    int i;
     if(pList!=NULL)
     {
-        returnAux=(ArrayList*)realloc(pList,sizeof(pList));
+        returnAux = al_newArrayList();
+        if(returnAux!=NULL)
+        {
+            for(i=0;i<pList->size;i++)
+            {
+                if(resizeUp(returnAux)==0)
+                {
+                    returnAux->add(pList->pElements[i]);
+                    returnAux->size+=1;
+                }
+            }
+        }
     }
     return returnAux;
 }
@@ -277,26 +289,21 @@ ArrayList* al_clone(ArrayList* pList)
 int al_push(ArrayList* pList, int index, void* pElement)
 {
     int returnAux=-1;
-    if(pList!=NULL && pElement!=NULL && index>=0)
+    if(pList!=NULL && pList->pElements!=NULL)
     {
         if(index==pList->size)
         {
-            if(pList->add(pList,pElement)==0)
-            {
-                returnAux=0;
-            }
+            pList->add(pElement);
+            returnAux=0;
         }
         else
         {
-            if(index<pList->size)
+            if(index<pList->size && index>=0)
             {
-                if(expand(pList,index)==0)
-                {
-                    if(pList->set(pList,index,pElement)==0)
-                    {
-                        returnAux=0;
-                    }
-                }
+                pList->size+=1;
+                expand(pList,index);
+                pList->set(pList,index,pElement);
+                returnAux=0;
             }
         }
     }
@@ -338,7 +345,7 @@ int al_isEmpty(ArrayList* pList)
     int returnAux = -1;
     if(pList!=NULL)
     {
-        if(pList->len(pList)==0)
+        if(pList->size==0)
         {
             returnAux = 1;
         }
@@ -483,17 +490,14 @@ int expand(ArrayList* pList,int index)
 {
     int returnAux = -1;
     int i;
-    if(pList!=NULL)
+    if(pList!=NULL && pList->pElements!=NULL)
     {
-        pList->size+=1;
         resizeUp(pList);
-
-        for(i=pList->size;i>index;i--)
-            {
-                pList->pElements[i]=pList->pElements[i-1];
-            }
+        for(i=index;i<(pList->size+1);i++)
+        {
+            pList->pElements[i+1]=pList->pElements[i];
+        }
         returnAux = 0;
-
     }
     return returnAux;
 }
