@@ -470,6 +470,8 @@ int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order)
 {
     int returnAux = -1;
     void* elementAux=NULL;
+    void* pElementA;
+    void* pElementB;
     int i,j;
     if(pList!=NULL && pFunc!=NULL && (order==1 || order==0))
     {
@@ -477,9 +479,11 @@ int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order)
         {
             for(j=i+1;j<pList->size;j++)
             {
+                pElementA=pList->get(pList,i);
+                pElementB=pList->get(pList,j);
                 if(order==1)
                 {
-                    if((int)(*pFunc)==-1)
+                    if(pFunc(pElementA,pElementB)==1)
                     {
                         elementAux=pList->pElements[i];
                         pList->pElements[i]=pList->pElements[j];
@@ -488,7 +492,7 @@ int al_sort(ArrayList* pList, int (*pFunc)(void* ,void*), int order)
                 }
                 else
                 {
-                    if((int)(*pFunc)==1)
+                    if(pFunc(pElementA,pElementB)==-1)
                     {
                         elementAux=pList->pElements[i];
                         pList->pElements[i]=pList->pElements[j];
