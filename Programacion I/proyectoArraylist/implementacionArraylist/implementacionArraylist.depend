@@ -38,3 +38,30 @@
 	<string.h>
 	"arrayImp.h"
 
+1497439034 source:c:\users\tomas\downloads\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\proyectoarraylist\implementacionarraylist\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1497439034 c:\users\tomas\downloads\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\proyectoarraylist\implementacionarraylist\arraylist.h
+
+1497491378 source:c:\users\tomas\downloads\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\proyectoarraylist\implementacionarraylist\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"arrayImp.h"
+
+1497491814 c:\users\tomas\downloads\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\proyectoarraylist\implementacionarraylist\arrayimp.h
+	"ArrayList.h"
+
+1497492209 source:c:\users\tomas\downloads\cursadaprogramacion-master\cursadaprogramacion-master\programacion i\proyectoarraylist\implementacionarraylist\arrayimp.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<ctype.h>
+	"arrayImp.h"
+	"ArrayList.h"
+

@@ -20,10 +20,20 @@ void menu(void);
 
 void validarString(char[], int);
 
-int checkearNumero(char*,int,int);
-
-eProgramador* newProgramador(int,char[],char[],int);
+int validarDigitoRango(char*,int,int);
 
 void altaProgramador(ArrayList* listaProgramadores);
 
+void eliminarProgramador(ArrayList* listaProgramadores);
+
+eProgramador* newProgramador(int,char[],char[],int);
+
 int checkearId(ArrayList* listaProgramadores,int);
+
+int buscarProgramadorPorId(ArrayList* listaProgramadores,int);
+
+void mostrarUnProgramador(eProgramador* unProgramador);
+
+void mostrarListaProgramadores(ArrayList* listaProgramadores);
+
+

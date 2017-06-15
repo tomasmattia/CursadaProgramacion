@@ -15,7 +15,6 @@ int main()
         menu();
         fflush(stdin);
         scanf("%d",&opcion);
-        fflush(stdin);
         switch(opcion)
         {
             case 1:
@@ -24,8 +23,10 @@ int main()
             case 2:
                 break;
             case 3:
+                eliminarProgramador(listaProgramadores);
                 break;
             case 4:
+                mostrarListaProgramadores(listaProgramadores);
                 break;
             case 7:
                 respuesta='n';
