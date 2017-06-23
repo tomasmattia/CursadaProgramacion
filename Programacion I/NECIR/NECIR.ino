@@ -2,7 +2,7 @@
 #include <Arduino.h>
 int pin=2;
 int led=3;
-int flag=0;
+int flag=1;
 NECIRrcv IR(pin);
 unsigned long valor;
 void setup() {
@@ -21,8 +21,11 @@ void loop() {
           case 3810328320:
             Serial.println("OK");
             digitalWrite(led,HIGH);
-            delay(50);
-            digitalWrite(led,LOW);
+            flag=1-flag;
+            if(flag==0)
+            {
+              digitalWrite(led,LOW);
+            }
             break;
           default:
             break;
