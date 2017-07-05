@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1498706873 source:d:\mattia alberti tomas julian\mattiaalbertitomasjulian\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1498706873 d:\mattia alberti tomas julian\mattiaalbertitomasjulian\arraylist.h
+
+1499260839 source:d:\mattia alberti tomas julian\mattiaalbertitomasjulian\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayList.h"
+	"lib.h"
+
+1499260307 d:\mattia alberti tomas julian\mattiaalbertitomasjulian\lib.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayList.h"
+
+1499260423 source:d:\mattia alberti tomas julian\mattiaalbertitomasjulian\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<limits.h>
+	"ArrayList.h"
+	"lib.h"
+
